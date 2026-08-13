@@ -31,6 +31,8 @@ models/
 .vscode/
 .idea/
 
-# 집필용 (배포 제외)
-manuscript/
-_nbgen/
+# 실행 산출물
+outputs/
+
+# 5장에서 독자가 직접 만드는 파일
+CLAUDE.md
