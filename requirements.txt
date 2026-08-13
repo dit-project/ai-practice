@@ -1,0 +1,50 @@
+# ============================================
+# 『실습으로 배우는 인공지능』 공통 패키지
+# ============================================
+# 주의: PyTorch(torch/torchvision/torchaudio)는 여기에 없습니다.
+#       CUDA 버전을 지정해 따로 설치해야 합니다.
+#       https://pytorch.org/get-started/locally/ 참조
+#
+#       예) pip install torch torchvision torchaudio \
+#             --index-url https://download.pytorch.org/whl/cu128
+#
+#       torchvision 은 11번 노트북(CNN)부터 필요합니다.
+#       데이터셋 다운로드 기능이 여기에 들어 있습니다.
+# ============================================
+
+# 수치 계산·시각화
+numpy
+matplotlib
+pandas
+scipy
+
+# 머신러닝
+scikit-learn
+
+# 노트북 실행
+jupyter
+ipykernel
+ipywidgets
+
+# 강화학습 (13번 노트북)
+gymnasium
+
+# LLM (19번 노트북부터)
+transformers
+
+# API 연동 (21번 노트북)
+openai
+
+# 임베딩·검색 (22번 노트북)
+sentence-transformers
+
+# 벡터 DB (23번 노트북)
+chromadb
+
+# 파인튜닝 (24~25번 노트북)
+peft
+accelerate
+
+# 유틸
+tqdm
+python-dotenv
