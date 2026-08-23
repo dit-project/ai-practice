@@ -1,4 +1,4 @@
-"""재현성을 위한 시드 고정 (1권 11.6절 참조)"""
+"""재현성을 위한 시드 고정 (이론편 11.6절 참조)"""
 import os
 import random
 import numpy as np
@@ -7,7 +7,7 @@ import numpy as np
 def set_seed(seed=42, deterministic=False):
     """무작위성이 개입하는 모든 곳의 시드를 고정한다.
 
-    1권 11.6절에서 다룬 세 곳을 모두 다룬다.
+    이론편 11.6절에서 다룬 세 곳을 모두 다룬다.
       1) 가중치 초기화
       2) 데이터 셔플
       3) 샘플링

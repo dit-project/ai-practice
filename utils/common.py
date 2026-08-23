@@ -1,4 +1,4 @@
-"""재현성 도구 — 15장 참조"""
+"""재현성 도구 — 17장 참조"""
 import random
 import numpy as np
 
