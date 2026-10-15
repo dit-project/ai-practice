@@ -25,6 +25,7 @@ bash setup.sh
 
 # 3) API 키 입력 (25장 이후 실습용, 선택)
 cp .env.example .env
+# (모델이 종료되어 404 가 나면 .env 의 LLM_MODEL 에 현재 모델 이름을 적는다 — 25장 2절)
 
 # 4) 환경 점검
 jupyter notebook setup_check.ipynb
@@ -211,6 +212,11 @@ ai-practice/
 
 **총 약 3GB.** 한 번 받으면 캐시에 저장되어 재사용됩니다.
 
+> **외부 서비스는 바뀐다.** 위 모델·데이터는 외부 저장소에서 받으므로 이름이 바뀌거나 사라질 수 있다.
+> 가장 자주 바뀌는 것은 **API 모델 이름**(`gemini-…`, `openai/gpt-oss-…` 등)이며, 종료되면 `404` 가 난다.
+> 25장 이후 노트북은 `.env` 의 `LLM_MODEL` · `LLM_PROVIDER` · `LLM_BASE_URL` 로 코드 수정 없이 바꿀 수 있다.
+> 이 저장소의 API 모델 기본값은 2026-10-15 에 제공처 공식 공지로 확인한 것이다.
+
 ---
 
 ## 이론편과 대조할 수 있는 값들
@@ -251,7 +257,10 @@ ai-practice/
 | `torch.cuda.is_available()` False | CPU 버전 설치됨 — 실습 1권 1장 |
 | `ModuleNotFoundError` | `pip install -r requirements.txt` |
 | VS Code 에서 import 실패 | 인터프리터를 venv 로 지정 |
-| 그래프 한글이 네모 (□□□) | 실습 1권 3장 1절 폰트 설정 |
+| 그래프 한글이 네모 (□□□) | 실습 1권 3장 1절 — 폰트 설치 → Matplotlib 캐시 삭제 → 커널 재시작 |
+| `Font 'default' does not have a glyph for '\u2212'` 경고 | 로그축 눈금의 마이너스 — 이 저장소의 노트북은 폰트를 `["DejaVu Sans", 한글폰트]` 순서로 지정해 해결했다 (3장 1절). 직접 만든 노트북이면 같은 순서로 지정 |
+| API 호출이 `404` (`no longer available` 등) | 모델 종료·변경 — `.env` 에 `LLM_MODEL=<현재 모델 이름>` (실습 1권 25장 2절 "모델이 사라졌을 때") |
+| API 호출이 `429` (한도 초과) | 분당/일일 한도 구분, `.env` 의 `LLM_CALL_INTERVAL`, 다른 제공처·로컬 서버 (실습 1권 25장 8절) |
 | 터미널 한글이 뒤섞임 (`源吏꾩삤`) | 실습 1권 1장 1-7절 — PowerShell UTF-8 설정 |
 | `CUDA out of memory` | 배치 축소 — 실습 2권 7장 |
 

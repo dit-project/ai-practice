@@ -21,7 +21,8 @@ def setup_korean_font(verbose=False):
             break
 
     if chosen:
-        plt.rcParams["font.family"] = chosen
+        # 로그축 눈금의 마이너스(U+2212)는 한글 폰트에 없는 경우가 많다 — 영문 폰트를 앞에 둔다 (03장 1절)
+        plt.rcParams["font.family"] = ["DejaVu Sans", chosen]
         plt.rcParams["axes.unicode_minus"] = False
         if verbose:
             print(f"한글 폰트: {chosen}")
