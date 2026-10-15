@@ -49,3 +49,13 @@ accelerate
 # 유틸
 tqdm
 python-dotenv
+
+# ============================================
+# 확인된 버전 (2026-10-15 전체 회귀 실행 환경 — Python 3.13, CPU, 키 없음)
+#   numpy 2.5.3, matplotlib 3.11.2, pandas 3.0.5, scipy 1.18.1, scikit-learn 1.9.1,
+#   torch 2.14.1, torchvision 0.29.1, gymnasium 1.4.0, transformers 5.19.0, tokenizers 0.23.3,
+#   openai 3.31.0, sentence-transformers 6.1.0, chromadb 1.5.9, peft 0.21.2, accelerate 1.15.0,
+#   python-dotenv 1.2.3, fastapi 0.143.1, uvicorn 0.53.0, pydantic 2.13.5, httpx 0.28.1, pillow 12.3.0
+# [변동 가능] 위 패키지는 버전을 고정하지 않았다. 새 버전에서 API 이름이 바뀌어 오류가 나면
+#            위 버전으로 맞춰 설치해 본다 (예: pip install "transformers==5.19.0").
+# ============================================
