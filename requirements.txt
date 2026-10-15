@@ -46,6 +46,10 @@ chromadb
 peft
 accelerate
 
+# 배포 (40번 노트북) — 없으면 40번의 서버 셀이 ModuleNotFoundError 로 멈춘다
+fastapi
+uvicorn
+
 # 유틸
 tqdm
 python-dotenv
